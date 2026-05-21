@@ -1,0 +1,38 @@
+{
+  "name": "zk-identity",
+  "version": "1.0.0",
+  "description": "Privacy-first identity on-chain. Prove who you are without revealing anything.",
+  "private": true,
+  "scripts": {
+    "compile":        "hardhat compile",
+    "test":           "hardhat test",
+    "deploy:local":   "hardhat run scripts/deploy.js --network hardhat",
+    "deploy:mumbai":  "hardhat run scripts/deploy.js --network polygon_mumbai",
+    "deploy:polygon": "hardhat run scripts/deploy.js --network polygon",
+    "circuit:age":    "circom circuits/AgeVerifier.circom --r1cs --wasm --sym -o circuits/build",
+    "circuit:unique": "circom circuits/UniqueHuman.circom --r1cs --wasm --sym -o circuits/build",
+    "circuit:setup":  "node scripts/setup_circuits.js",
+    "frontend:dev":   "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "lint":           "eslint . --ext .js,.jsx,.sol"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+
+    "hardhat":       "^2.22.0",
+    "chai":          "^4.3.10",
+    "dotenv":        "^16.4.0",
+    "eslint":        "^8.57.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "circomlibjs":             "^0.1.7",
+    "ethers":                  "^6.11.0",
+    "snarkjs":                 "^0.7.3"
+  },
+  "keywords": [
+    "zero-knowledge", "zk-proofs", "blockchain", "identity",
+    "privacy", "ethereum", "polygon", "web3", "groth16", "circom"
+  ],
+  "license": "MIT"
+}

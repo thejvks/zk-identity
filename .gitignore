@@ -1,0 +1,12 @@
+node_modules/
+.env
+
+artifacts/
+cache/
+coverage/
+deployments.json
+circuits/build/
+frontend/.next/
+frontend/node_modules/
+*.zkey
+*.ptau
